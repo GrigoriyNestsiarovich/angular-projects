@@ -1,0 +1,27 @@
+<div class="todo-title">{{ title }}</div>
+
+<div class="inputs-wrapper">
+  <input type="text" class="input-todo" placeholder="Thing you want to do today?" [(ngModel)]="inputToDo" />
+  <input type="submit" value="Add todo" class="submit-todo" (click)="createTodo()">
+  <input type="submit" value="Select all" class="select-todos" (click)="selectAllTodos()">
+</div>
+
+<div class="todos">
+  <div *ngFor="let todo of todos; let i = index;" class="todo {{todo.completed ? 'done' : ''}} {{!todo.editing ? '' : 'editing'}}">
+    <div class="todo-left">
+      <input type="checkbox" class="checkbox" (click)="toggleDone(i)" [checked]="todo.completed ? true : false">
+      <p class="content" (click)="toggleDone(i)">{{ todo.content }}</p>
+      <input type="text" class="todo-update" [(ngModel)]="todo.content" autofocus>
+    </div>
+    <div class="todo-rigth">
+      <button class="edit-todo {{todo.completed ? 'disabled' : ''}}" (click)="onEditClicked(i)">{{todo.editing ? 'Save' : 'Edit'}}</button>
+      <button class="delete-todo" (click)="deleteTodo(i)">Delete</button>
+    </div>
+  </div>
+</div>
+
+<div class="uncomplited">Uncomplited tasks: {{getUncomletedTasksAmount()}}</div>
+
+<div class="clear">
+  <button class="clear-completed {{!atLeastOneSelected() ? 'hidden' : ''}}" (click)="deleteSelectedTotod()">Clear</button>
+</div>
