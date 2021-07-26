@@ -1,0 +1,8 @@
+<div class="categories-wrapper">
+  <a *ngFor="let category of categories; let i = index;" class="categories-item" id="{{i + 1}}" href="#">
+    <div class="categories-background" ></div>
+    <img src="./assets/categories-logos/{{i + 1}}.png" alt="">
+    <p>{{category.name}}</p>
+    <div class="categories-up" id="{{i + 1}}" (click)="showCategoryWords(i + 1)"></div>
+  </a>
+</div>
