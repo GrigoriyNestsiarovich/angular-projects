@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'english-for-kids';
+
+  opened: boolean;
+
+  ngOnInit(): void {
+    this.opened = false;
+  }
+
+  showAsideMenu(): void {
+    this.opened = !this.opened;
+  }
 }

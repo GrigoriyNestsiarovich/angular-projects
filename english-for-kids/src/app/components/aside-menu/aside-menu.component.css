@@ -1,0 +1,75 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  padding: 130px 47px 45px 47px;
+  width: 100%;
+  max-width: 380px;
+  background: linear-gradient(180deg, #0099AE 0%, #00BF82 100%);
+  overflow-y: auto;
+}
+
+.link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.link p {
+  font-size: 24px;
+  position: relative;
+  color: #fff;
+  font-weight: 500;
+  transition: color .3s linear;
+}
+
+.link p::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  background:#ffd86f;
+  width: 0%;
+  height: 2px;
+  box-shadow: 1px 1px 2px black;
+  transition: width .3s linear;
+}
+
+.link:hover p {
+  color: #ffd86f;
+  text-shadow: 1px 1px 2px black;
+}
+
+.link:hover p::after {
+  width: 100%;
+}
+
+.link img {
+  display: block;
+  width: 50px;
+  margin-right: 15px;
+}
+
+.link p.active-link {
+  color: #ffd86f;
+  text-shadow: 1px 1px 2px black;
+}
+
+.link p.active-link::after {
+  width: 100%;
+}
+
+.nav-link {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  max-width: 277px;
+  height: 50px;
+}

@@ -1,3 +1,21 @@
-<app-header></app-header>
-<app-main></app-main>
-<app-footer></app-footer>
+<mat-sidenav-container>
+
+  <mat-sidenav mode="over" [(opened)]="opened">
+    <app-aside-menu></app-aside-menu>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <header>
+      <div class="container">
+        <app-burger (click)="showAsideMenu()"></app-burger>
+        <app-game-mode-switcher></app-game-mode-switcher>
+      </div>
+    </header>
+
+    <app-main></app-main>
+
+    <app-footer></app-footer>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

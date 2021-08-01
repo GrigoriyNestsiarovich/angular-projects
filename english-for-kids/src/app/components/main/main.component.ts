@@ -10,12 +10,8 @@ export class MainComponent implements OnInit {
   categories: Category[];
   constructor() { }
 
-  async ngOnInit(): Promise<void> {
+  ngOnInit(): void {
     this.categories = CATEGORIES;
-  }
-
-  insertCategories(): void {
-
   }
 
   showCategoryWords(id: number): void {

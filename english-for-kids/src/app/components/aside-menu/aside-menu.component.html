@@ -1,1 +1,17 @@
-<p>aside-menu works!</p>
+<a class="link" id="0">
+  <img src="./assets/categories-logos/0.png" alt="">
+  <p class="active-link">Main Page</p>
+  <div class="nav-link" id="0" (click)="setActivePage()"></div>
+</a>
+
+<a *ngFor="let link of links; let i = index" class="link" id="{{i + 1}}">
+  <img src="./assets/categories-logos/{{i + 1}}.png" alt="">
+  <p class="">{{link.name}}</p>
+  <div class="nav-link" id="{{i + 1}}"></div>
+</a>
+
+<a class="link" id="9">
+  <img src="./assets/categories-logos/9.png" alt="">
+  <p class="">Statistics</p>
+  <div class="nav-link" id="9"></div>
+</a>
